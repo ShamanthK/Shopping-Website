@@ -1,0 +1,21 @@
+.productCard {
+    padding: 25px;
+    width: 575px;
+    display: inline-flex;
+}
+
+.productContainer {
+    display: flex;
+    margin-top: 50px;
+    padding: 15px;
+}
+
+.productDesc {
+    padding: 25px;
+}
+
+.footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}

@@ -1,0 +1,42 @@
+.cartItems {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.itemContainer {
+    display: flex;
+}
+
+.totalHeader {
+    display: flex;
+    justify-content: space-between;
+}
+
+.noCartContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65vh;
+}
+
+.noCart {
+    display: flex;
+    flex-direction: column;
+}
+
+.cartIcon { 
+    font-size: 50px;
+    margin-left: 105px;
+}

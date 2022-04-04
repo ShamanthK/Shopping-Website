@@ -1,0 +1,23 @@
+.header {
+    width: 100%;
+    background-color: black;
+    height: 70px;
+    border-bottom-color: black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.title {
+    margin: 0px;
+    padding: 20px;
+    color: white;
+}
+
+.options {
+    color: white;
+    padding-right: 50px;
+    margin-top: 25px;
+    display: flex; 
+    justify-content: space-between;
+    width: 800px;
+}

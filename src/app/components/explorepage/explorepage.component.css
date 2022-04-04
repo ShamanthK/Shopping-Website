@@ -1,0 +1,21 @@
+.exploreContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.onlineShop {
+    width: 475px;
+    padding: 180px;
+}
+
+.image {
+    padding: 120px
+}
+
+.background {
+    /* background-image: url(https://images.pexels.com/photos/1050244/pexels-photo-1050244.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260); */
+    background-image: url(https://images.pexels.com/photos/5632346/pexels-photo-5632346.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    height: 92.8vh;
+    background-size: 100vw 92.8vh;
+}
