@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 })
 export class SuccessOrderComponent implements OnInit {
 
+  id: number = Math.floor(Math.random() * 100000 + 100000)
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
