@@ -21,6 +21,7 @@ export class HeaderComponent implements OnInit {
   getItems$: Observable<Product[]>
   numCartItems: number = 0
   isAuthenticated$: Observable<boolean>
+  checkIndex: number
 
   constructor(private product: ProductsService, private store: Store<AppState>, private router: Router, public dialog: MatDialog) { }
 
@@ -39,7 +40,7 @@ export class HeaderComponent implements OnInit {
     this.isAuthenticated$ = this.store.select(getLoginStatus)
   }
 
-  openByCategory(product: string) {
+  openByCategory(product: string, i: number) {
     this.isAuthenticated$.subscribe((login) => {
       if(login) {
         this.product.getProductByCategory(product).subscribe((data) => {
@@ -64,8 +65,7 @@ export class HeaderComponent implements OnInit {
         });
       }
     })
-
-    
+    this.checkIndex = i
   }
 
 }
