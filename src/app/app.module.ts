@@ -14,6 +14,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { HeaderComponent } from './components/header/header.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { appRoutes } from './routes';
@@ -25,6 +27,8 @@ import { StoreModule } from '@ngrx/store';
 import { productReducer } from './ngRx/product.reducer';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { SuccessOrderComponent } from './components/success-order/success-order.component';
+import { LoginComponent } from './components/login/login.component';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +39,8 @@ import { SuccessOrderComponent } from './components/success-order/success-order.
     SelectedproductComponent,
     CategoryComponent,
     CheckoutComponent,
-    SuccessOrderComponent
+    SuccessOrderComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -51,6 +56,10 @@ import { SuccessOrderComponent } from './components/success-order/success-order.
     MatSnackBarModule,
     MatBadgeModule,
     MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule ,
     StoreModule.forRoot({ categoryProducts: productReducer })
   ],
   providers: [],

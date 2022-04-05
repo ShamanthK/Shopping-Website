@@ -9,6 +9,7 @@ import { Product } from 'src/app/Product';
 import { faXmark, faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SuccessOrderComponent } from '../success-order/success-order.component';
+import { removeFromCart } from 'src/app/ngRx/product.actions';
 
 @Component({
   selector: 'app-checkout',
@@ -59,6 +60,11 @@ export class CheckoutComponent implements OnInit {
       horizontalPosition: 'center'
     })
     this.orderPlaced = true
+  }
+
+  removeCartItem(item: Product) {
+    console.log('remove')
+    this.store.dispatch(removeFromCart({ product: item }))
   }
 
 }

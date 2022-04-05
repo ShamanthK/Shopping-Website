@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-homepage',
@@ -9,14 +10,17 @@ import { Router } from '@angular/router';
 export class HomepageComponent implements OnInit {
 
   exploreAll: string = 'Explore All Products'
+  isAuthenticated: boolean
+  subscription: Subscription
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) { 
+  }
 
   ngOnInit(): void {
   }
 
   routeToAllProducts() {
-    console.log('clicked')
+    console.log('clicked', this.isAuthenticated)
     this.router.navigateByUrl('/products')
   }
 }

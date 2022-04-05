@@ -2,7 +2,7 @@
     <div>
         <mat-card style="width: 1200px; margin-bottom: 20px;" *ngFor="let item of cartItems$ | async">
             <mat-card-content>
-                <fa-icon [icon]="faXmark" style="float: right; font-size: 25px; cursor: pointer;"></fa-icon>
+                <fa-icon [icon]="faXmark" style="float: right; font-size: 25px; cursor: pointer;" (click)="removeCartItem(item)"></fa-icon>
                 <div class="itemContainer">
                     <img src="{{ item.image }}" alt="Product Card" width="200" height="200" padding="20px" style="border: 1px solid">
                     <div style="padding: 35px">
