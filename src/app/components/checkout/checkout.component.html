@@ -1,6 +1,6 @@
 <div class="cartItems" *ngIf="numCartItems > 0 && !orderPlaced">
     <div>
-        <mat-card style="width: 1200px; margin-bottom: 20px;" *ngFor="let item of cartItems$ | async">
+        <mat-card class="cartItem" *ngFor="let item of cartItems$ | async">
             <mat-card-content>
                 <fa-icon [icon]="faXmark" style="float: right; font-size: 25px; cursor: pointer;" (click)="removeCartItem(item)"></fa-icon>
                 <div class="itemContainer">
@@ -21,7 +21,7 @@
             </mat-card-content>
         </mat-card>
     </div>
-    <mat-card style="width: 500px; height: 325px;">
+    <mat-card class="totalCard">
         <mat-card-content>
             <div style="padding: 20px;">
                 <div>
@@ -53,8 +53,8 @@
         </mat-card-content>
     </mat-card>
 </div>
-<div style="padding-left: 50px;" *ngIf="numCartItems > 0 && !orderPlaced">
-    <mat-card style="width: 1200px;">
+<div class="delivery" *ngIf="numCartItems > 0 && !orderPlaced">
+    <mat-card class="freeCard">
         <mat-card-content>
             <div class="productContainer">
                 <div>Free Standard Delivery</div>

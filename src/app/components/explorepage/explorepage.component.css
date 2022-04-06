@@ -4,9 +4,25 @@
     justify-content: space-between;
 }
 
+@media screen 
+  and (min-width: 1000px) 
+  and (max-width: 1600px)  { 
+    .exploreContainer {
+        height: 88.3vh;
+    }
+}
+
 .onlineShop {
     width: 475px;
     padding: 180px;
+}
+
+@media screen 
+  and (min-width: 1000px) 
+  and (max-width: 1600px)  { 
+    .onlineShop {
+        padding: 90px;
+    }
 }
 
 .image {
@@ -18,4 +34,12 @@
     background-image: url(https://images.pexels.com/photos/5632346/pexels-photo-5632346.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
     height: 92.8vh;
     background-size: 100vw 92.8vh;
+}
+
+@media screen 
+  and (min-width: 1000px) 
+  and (max-width: 1600px)  { 
+    .background {
+        height: 88.3vh;
+    }
 }
