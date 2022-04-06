@@ -16,6 +16,6 @@ export class SuccessOrderComponent implements OnInit {
   }
 
   continueShopping() {
-    this.router.navigateByUrl('/products')
+    this.router.navigate(['/products'])
   }
 }

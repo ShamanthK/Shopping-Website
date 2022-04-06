@@ -21,6 +21,6 @@ export class HomepageComponent implements OnInit {
 
   routeToAllProducts() {
     console.log('clicked', this.isAuthenticated)
-    this.router.navigateByUrl('/products')
+    this.router.navigate(['/products'])
   }
 }

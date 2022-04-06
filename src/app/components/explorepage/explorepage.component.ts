@@ -21,7 +21,6 @@ export class ExplorepageComponent implements OnInit {
 
   constructor(public dialog: MatDialog, private dataService: DataserviceService, private store: Store<AppState>) {
     this.subscription = this.dataService.onAuthentication().subscribe((value) => {
-      console.log('value:', value)
       this.isAuthenticated = value
     })
     this.isAuthenticated$ = this.store.select(getLoginStatus)
@@ -32,7 +31,6 @@ export class ExplorepageComponent implements OnInit {
 
   exploreAll() {
     this.isAuthenticated$.subscribe((login) => {
-      console.log('login: ', login)
       if (login) {
         this.openProductPage.emit()
       } else {
@@ -42,7 +40,6 @@ export class ExplorepageComponent implements OnInit {
         });
 
         dialogRef.afterClosed().subscribe(result => {
-          console.log('The dialog was closed');
           // this.animal = result;
         });
       }

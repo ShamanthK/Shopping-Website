@@ -46,11 +46,11 @@ export class HeaderComponent implements OnInit {
         this.product.getProductByCategory(product).subscribe((data) => {
           this.store.dispatch(productByCategory({ product: data }))
           if (product === 'home') {
-            this.router.navigateByUrl('/')
+            this.router.navigate(['/'])
           } else if (product === 'checkout') {
-            this.router.navigateByUrl('/checkout')
+            this.router.navigate(['/checkout'])
           } else {
-            this.router.navigateByUrl('/category/' + product)
+            this.router.navigate(['/category/' + product])
           }
         })
       } else {

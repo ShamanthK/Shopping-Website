@@ -50,7 +50,7 @@ export class CheckoutComponent implements OnInit {
 
   selectedQuantity(e: MatSelectChange) {
     this.quantityValue = parseInt(e.value)
-    console.log(this.quantityValue, typeof this.quantityValue)
+    console.log(e)
   }
 
   placeOrder() {

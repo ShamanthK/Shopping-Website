@@ -10,7 +10,7 @@
                         <p>${{ item.price * quantityValue}}</p>
                         <mat-form-field appearance="fill">
                             <mat-label>Quantity</mat-label>
-                            <mat-select (selectionChange)="selectedQuantity($event)">
+                            <mat-select (selectionChange)="selectedQuantity($event)" class="mat-select">
                               <mat-option *ngFor="let q of quantity" [value]="q.value">
                                 {{q.viewValue}}
                               </mat-option>

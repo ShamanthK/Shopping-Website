@@ -27,7 +27,7 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit(): void {
     this.product.getAllProducts().subscribe((data) => {
-      console.log('data: ', data)
+      // console.log('data: ', data)
       this.products = data
       this.cartItems$ = this.store.select(getCartItems)
       this.cartItems$.subscribe((data) => {

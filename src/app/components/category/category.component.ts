@@ -24,13 +24,13 @@ export class CategoryComponent implements OnInit {
   constructor(private router: Router, private store: Store<AppState>) { }
 
   ngOnInit(): void {
-    console.log(this.router)
     this.productState$ = this.store.select(getCategoryProducts)
     this.productState$.subscribe((data) => {
+      console.log('data: ', data)
       this.cartItems$ = this.store.select(getCartItems)
       this.cartItems$.subscribe((cart) => {
         this.cartItems = cart
-        console.log(cart)
+        // console.log(cart)
         this.addedToCart = []
         data.forEach((p) => {
           if (this.cartItems.filter((f) => f.id === p.id).length > 0) {
