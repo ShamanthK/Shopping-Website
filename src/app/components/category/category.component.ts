@@ -26,7 +26,6 @@ export class CategoryComponent implements OnInit {
   ngOnInit(): void {
     this.productState$ = this.store.select(getCategoryProducts)
     this.productState$.subscribe((data) => {
-      console.log('data: ', data)
       this.cartItems$ = this.store.select(getCartItems)
       this.cartItems$.subscribe((cart) => {
         this.cartItems = cart
