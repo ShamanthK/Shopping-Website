@@ -9,13 +9,13 @@ describe('ExplorepageComponent', () => {
   let fixture: ComponentFixture<ExplorepageComponent>;
 
   beforeEach(async () => {
-    await TestBed.configureTestingModule({imports: [
-      MatDialogModule,
-      StoreModule.forRoot({ categoryProducts: productReducer })
-    ],
-      declarations: [ ExplorepageComponent ]
-    })
-    .compileComponents();
+    await TestBed.configureTestingModule({
+      imports: [
+        MatDialogModule,
+        StoreModule.forRoot({ categoryProducts: productReducer }),
+      ],
+      declarations: [ExplorepageComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

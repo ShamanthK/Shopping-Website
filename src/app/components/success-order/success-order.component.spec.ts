@@ -10,15 +10,10 @@ describe('SuccessOrderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule,
-      ],
-      declarations: [ SuccessOrderComponent ],
-      providers: [
-        { provide: Router, useValue: routerSpy }
-      ]
-    })
-    .compileComponents();
+      imports: [RouterTestingModule],
+      declarations: [SuccessOrderComponent],
+      providers: [{ provide: Router, useValue: routerSpy }],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -32,7 +27,7 @@ describe('SuccessOrderComponent', () => {
   });
 
   it('should navigate to products', () => {
-    component.continueShopping()
+    component.continueShopping();
     expect(routerSpy.navigate).toHaveBeenCalledWith(['/products']);
   });
 });

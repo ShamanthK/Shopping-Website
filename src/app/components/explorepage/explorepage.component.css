@@ -1,45 +1,39 @@
 .exploreContainer {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
-@media screen 
-  and (min-width: 1000px) 
-  and (max-width: 1600px)  { 
-    .exploreContainer {
-        height: 88.3vh;
-    }
+@media screen and (min-width: 1000px) and (max-width: 1600px) {
+  .exploreContainer {
+    height: 88.3vh;
+  }
 }
 
 .onlineShop {
-    width: 475px;
-    padding: 180px;
+  width: 475px;
+  padding: 180px;
 }
 
-@media screen 
-  and (min-width: 1000px) 
-  and (max-width: 1600px)  { 
-    .onlineShop {
-        padding: 90px;
-    }
+@media screen and (min-width: 1000px) and (max-width: 1600px) {
+  .onlineShop {
+    padding: 90px;
+  }
 }
 
 .image {
-    padding: 120px
+  padding: 120px;
 }
 
 .background {
-    /* background-image: url(https://images.pexels.com/photos/1050244/pexels-photo-1050244.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260); */
-    background-image: url(https://images.pexels.com/photos/5632346/pexels-photo-5632346.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
-    height: 93vh;
-    background-size: 100vw 93.4vh;
+  /* background-image: url(https://images.pexels.com/photos/1050244/pexels-photo-1050244.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260); */
+  background-image: url(https://images.pexels.com/photos/5632346/pexels-photo-5632346.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  height: 93vh;
+  background-size: 100vw 93.4vh;
 }
 
-@media screen 
-  and (min-width: 1000px) 
-  and (max-width: 1600px)  { 
-    .background {
-        height: 88.3vh;
-    }
+@media screen and (min-width: 1000px) and (max-width: 1600px) {
+  .background {
+    height: 88.3vh;
+  }
 }

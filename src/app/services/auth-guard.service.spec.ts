@@ -12,7 +12,7 @@ describe('AuthGuardService', () => {
     TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        StoreModule.forRoot({ categoryProducts: productReducer })
+        StoreModule.forRoot({ categoryProducts: productReducer }),
       ],
     });
     service = TestBed.inject(AuthGuardService);

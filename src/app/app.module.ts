@@ -30,7 +30,7 @@ import { productReducer } from './ngRx/product.reducer';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { SuccessOrderComponent } from './components/success-order/success-order.component';
 import { LoginComponent } from './components/login/login.component';
-import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 @NgModule({
   declarations: [
@@ -44,7 +44,7 @@ import { SideNavComponent } from './components/side-nav/side-nav.component';
     CheckoutComponent,
     SuccessOrderComponent,
     LoginComponent,
-    SideNavComponent
+    SideNavComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,10 +65,10 @@ import { SideNavComponent } from './components/side-nav/side-nav.component';
     MatToolbarModule,
     MatSidenavModule,
     FormsModule,
-    ReactiveFormsModule ,
-    StoreModule.forRoot({ categoryProducts: productReducer })
+    ReactiveFormsModule,
+    StoreModule.forRoot({ categoryProducts: productReducer }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

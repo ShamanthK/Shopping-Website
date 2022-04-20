@@ -1,21 +1,29 @@
 <div class="container">
-    <mat-card style="height: fit-content; width: 550px; padding: 35px;">
-        <mat-card-title>{{ selectedProduct.title }}</mat-card-title>
-        <mat-card-content>
-            <div class="productContainer">
-                <img src="{{ selectedProduct.image }}" alt="Product Card" width="200" height="250" padding="20px">
-                <div class="productDesc">
-                    <p>{{ selectedProduct.description }}</p>
-                    <p><b>${{ selectedProduct.price }}</b></p>
-                </div>
-            </div>
-        </mat-card-content>
-        <!-- <mat-divider inset></mat-divider> -->
-        <mat-card-footer>
-            <div class="footer">
-                <!-- <button mat-raised-button color="primary" (click)="openProduct(product)">View Product</button> -->
-                <button mat-raised-button color="primary">Add to Cart</button>
-            </div>
-        </mat-card-footer>
-    </mat-card>
+  <mat-card style="height: fit-content; width: 550px; padding: 35px">
+    <mat-card-title>{{ selectedProduct.title }}</mat-card-title>
+    <mat-card-content>
+      <div class="productContainer">
+        <img
+          src="{{ selectedProduct.image }}"
+          alt="Product Card"
+          width="200"
+          height="250"
+          padding="20px"
+        />
+        <div class="productDesc">
+          <p>{{ selectedProduct.description }}</p>
+          <p>
+            <b>${{ selectedProduct.price }}</b>
+          </p>
+        </div>
+      </div>
+    </mat-card-content>
+    <!-- <mat-divider inset></mat-divider> -->
+    <mat-card-footer>
+      <div class="footer">
+        <!-- <button mat-raised-button color="primary" (click)="openProduct(product)">View Product</button> -->
+        <button mat-raised-button color="primary">Add to Cart</button>
+      </div>
+    </mat-card-footer>
+  </mat-card>
 </div>

@@ -6,23 +6,22 @@ import { StoreModule } from '@ngrx/store';
 import { productReducer } from 'src/app/ngRx/product.reducer';
 import { ProductsService } from 'src/app/services/products.service';
 import { of } from 'rxjs/internal/observable/of';
-import { Product } from '../../Product'
+import { Product } from '../../Product';
 
 describe('ProductsComponent', () => {
   let component: ProductsComponent;
   let fixture: ComponentFixture<ProductsComponent>;
-  let productService: ProductsService
+  let productService: ProductsService;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
         HttpClientModule,
         RouterTestingModule,
-        StoreModule.forRoot({ categoryProducts: productReducer })
+        StoreModule.forRoot({ categoryProducts: productReducer }),
       ],
-      declarations: [ ProductsComponent ]
-    })
-    .compileComponents();
+      declarations: [ProductsComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -37,10 +36,20 @@ describe('ProductsComponent', () => {
   });
 
   it('should get all products', () => {
-    const products: Product[] = [{id: 1, description: 'Mens Clothes', category: 'clothing', image: '', price: 100, title: 'T-Shirt', rating: { user: 3 }}]
-    spyOn(productService, 'getAllProducts').and.returnValue(of(products))
-    component.ngOnInit()
-  });    
+    const products: Product[] = [
+      {
+        id: 1,
+        description: 'Mens Clothes',
+        category: 'clothing',
+        image: '',
+        price: 100,
+        title: 'T-Shirt',
+        rating: { user: 3 },
+      },
+    ];
+    spyOn(productService, 'getAllProducts').and.returnValue(of(products));
+    component.ngOnInit();
+  });
 
   // it('should check cart items', () => {
   //   const products: Product[] = [{id: 1, description: 'Mens Clothes', category: 'clothing', image: '', price: 100, title: 'T-Shirt', rating: { user: 3 }}]
@@ -50,15 +59,44 @@ describe('ProductsComponent', () => {
   // });
 
   it('should open selected product', () => {
-    const product: Product = {id: 1, description: 'Mens Clothes', category: 'clothing', image: '', price: 100, title: 'T-Shirt', rating: { user: 3 }}
-    const selectedProduct: Product[] = [{id: 1, description: 'Mens Clothes', category: 'clothing', image: '', price: 100, title: 'T-Shirt', rating: { user: 3 }}]
-    spyOn(productService, 'getSelectedProduct').and.returnValue(of(selectedProduct))
-    component.openProduct(product)
+    const product: Product = {
+      id: 1,
+      description: 'Mens Clothes',
+      category: 'clothing',
+      image: '',
+      price: 100,
+      title: 'T-Shirt',
+      rating: { user: 3 },
+    };
+    const selectedProduct: Product[] = [
+      {
+        id: 1,
+        description: 'Mens Clothes',
+        category: 'clothing',
+        image: '',
+        price: 100,
+        title: 'T-Shirt',
+        rating: { user: 3 },
+      },
+    ];
+    spyOn(productService, 'getSelectedProduct').and.returnValue(
+      of(selectedProduct)
+    );
+    component.openProduct(product);
   });
 
   it('should add product to cart', () => {
-    const selectedProduct: Product[] = [{id: 1, description: 'Mens Clothes', category: 'clothing', image: '', price: 100, title: 'T-Shirt', rating: { user: 3 }}]
-    component.addtoCart(selectedProduct)
+    const selectedProduct: Product[] = [
+      {
+        id: 1,
+        description: 'Mens Clothes',
+        category: 'clothing',
+        image: '',
+        price: 100,
+        title: 'T-Shirt',
+        rating: { user: 3 },
+      },
+    ];
+    component.addtoCart(selectedProduct);
   });
-
 });

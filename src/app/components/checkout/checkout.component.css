@@ -1,127 +1,108 @@
 .cartItems {
-    display: flex;
-    justify-content: space-between;
-    padding: 50px;
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
 }
 
-@media screen 
-  and (min-width: 1000px) 
-  and (max-width: 1600px)  { 
-    .cartItems {
-        padding: 25px;
-    }
+@media screen and (min-width: 1000px) and (max-width: 1600px) {
+  .cartItems {
+    padding: 25px;
+  }
 }
 
 .total {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .buttonContainer {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }
 
 .itemContainer {
-    display: flex;
+  display: flex;
 }
 
 .totalHeader {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .noCartContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 65vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 65vh;
 }
 
 .noCart {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-.cartIcon { 
-    font-size: 50px;
-    margin-left: 105px;
+.cartIcon {
+  font-size: 50px;
+  margin-left: 105px;
 }
 
 .cartItem {
-    width: 1200px; 
-    margin-bottom: 20px;
+  width: 1200px;
+  margin-bottom: 20px;
 }
 
-@media screen 
-  and (min-width: 1000px) 
-  and (max-width: 1600px)  { 
-    .cartItem {
-      width: 780px;
-    }
+@media screen and (min-width: 1000px) and (max-width: 1600px) {
+  .cartItem {
+    width: 780px;
+  }
 }
 
-@media screen 
-  and (min-width : 1620px) 
-  and (max-width : 1800px) 
-  and (max-height : 2880px)   { 
-    .cartItem {
-      width: 1150px;
-    }
+@media screen and (min-width: 1620px) and (max-width: 1800px) and (max-height: 2880px) {
+  .cartItem {
+    width: 1150px;
+  }
 }
 
 .totalCard {
-    width: 500px;
-    height: 325px;
+  width: 500px;
+  height: 325px;
 }
 
-@media screen 
-  and (min-width: 1000px) 
-  and (max-width: 1600px)  { 
-    .totalCard {
-        width: 350px;
-    }
+@media screen and (min-width: 1000px) and (max-width: 1600px) {
+  .totalCard {
+    width: 350px;
+  }
 }
 
-@media screen 
-  and (min-width : 1620px) 
-  and (max-width : 1800px) 
-  and (max-height : 2880px)   { 
-    .totalCard {
-      width: 435px;
-    }
+@media screen and (min-width: 1620px) and (max-width: 1800px) and (max-height: 2880px) {
+  .totalCard {
+    width: 435px;
+  }
 }
 
 .freeCard {
-    width: 1200px;
+  width: 1200px;
 }
 
-@media screen 
-  and (min-width: 1000px) 
-  and (max-width: 1600px)  { 
-    .freeCard {
-        width: 780px;
-    }
+@media screen and (min-width: 1000px) and (max-width: 1600px) {
+  .freeCard {
+    width: 780px;
+  }
 }
 
-@media screen 
-  and (min-width : 1620px) 
-  and (max-width : 1800px) 
-  and (max-height : 2880px)   { 
-    .freeCard {
-      width: 1150px;
-    }
+@media screen and (min-width: 1620px) and (max-width: 1800px) and (max-height: 2880px) {
+  .freeCard {
+    width: 1150px;
+  }
 }
 
 .delivery {
-    padding-left: 50px;
+  padding-left: 50px;
 }
 
-@media screen 
-  and (min-width: 1000px) 
-  and (max-width: 1600px)  { 
-    .delivery {
-        padding-left: 25px;
-    }
+@media screen and (min-width: 1000px) and (max-width: 1600px) {
+  .delivery {
+    padding-left: 25px;
+  }
 }

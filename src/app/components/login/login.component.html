@@ -1,48 +1,72 @@
 <div>
-    <h3>Register to shop online and place an order</h3>
-    <form class="add-form" [formGroup]="registerForm" (ngSubmit)="registerUser(registerForm)">
-        <div class="form-control" style="padding: 20px;">
-            <mat-form-field>
-                <mat-label>First Name</mat-label>
-                <input matInput formControlName="firstName">
-            </mat-form-field>
-            <div *ngIf="registerForm.get('firstName')?.hasError('required') &&
-            registerForm.get('firstName')?.touched" style="color: red">
-                Please provide a first name.
-            </div>
-        </div>
-        <div class="form-control" style="padding: 20px;">
-            <mat-form-field>
-                <mat-label>Last Name</mat-label>
-                <input matInput formControlName="lastName">
-            </mat-form-field>
-            <div *ngIf="registerForm.get('firstName')?.hasError('required') &&
-            registerForm.get('firstName')?.touched" style="color: red">
-                Please provide a last name.
-            </div>
-        </div>
-        <div class="form-control" style="padding: 20px;">
-            <mat-form-field>
-                <mat-label>Email</mat-label>
-                <input matInput formControlName="email">
-            </mat-form-field>
-            <div *ngIf="registerForm.get('firstName')?.hasError('required') &&
-            registerForm.get('firstName')?.touched" style="color: red">
-                Please provide an email address.
-            </div>
-        </div>
-        <div class="form-control" style="padding: 20px;">
-            <mat-form-field>
-                <mat-label>Password</mat-label>
-                <input matInput formControlName="password">
-            </mat-form-field>
-            <div *ngIf="registerForm.get('firstName')?.hasError('required') &&
-            registerForm.get('firstName')?.touched" style="color: red">
-                Please provide a password.
-            </div>
-        </div>
-        <div style="display: flex; justify-content: center;">
-            <button mat-raised-button color="primary">Register</button>
-        </div>
-    </form>
+  <h3>Register to shop online and place an order</h3>
+  <form
+    class="add-form"
+    [formGroup]="registerForm"
+    (ngSubmit)="registerUser(registerForm)"
+  >
+    <div class="form-control" style="padding: 20px">
+      <mat-form-field>
+        <mat-label>First Name</mat-label>
+        <input matInput formControlName="firstName" />
+      </mat-form-field>
+      <div
+        *ngIf="
+          registerForm.get('firstName')?.hasError('required') &&
+          registerForm.get('firstName')?.touched
+        "
+        style="color: red"
+      >
+        Please provide a first name.
+      </div>
+    </div>
+    <div class="form-control" style="padding: 20px">
+      <mat-form-field>
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastName" />
+      </mat-form-field>
+      <div
+        *ngIf="
+          registerForm.get('firstName')?.hasError('required') &&
+          registerForm.get('firstName')?.touched
+        "
+        style="color: red"
+      >
+        Please provide a last name.
+      </div>
+    </div>
+    <div class="form-control" style="padding: 20px">
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" />
+      </mat-form-field>
+      <div
+        *ngIf="
+          registerForm.get('firstName')?.hasError('required') &&
+          registerForm.get('firstName')?.touched
+        "
+        style="color: red"
+      >
+        Please provide an email address.
+      </div>
+    </div>
+    <div class="form-control" style="padding: 20px">
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" />
+      </mat-form-field>
+      <div
+        *ngIf="
+          registerForm.get('firstName')?.hasError('required') &&
+          registerForm.get('firstName')?.touched
+        "
+        style="color: red"
+      >
+        Please provide a password.
+      </div>
+    </div>
+    <div style="display: flex; justify-content: center">
+      <button mat-raised-button color="primary">Register</button>
+    </div>
+  </form>
 </div>

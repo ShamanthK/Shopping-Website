@@ -1,23 +1,45 @@
 <div *ngFor="let product of addedToCart" class="productCard">
-    <div>
-        <mat-card style="height: 375px;">
-            <mat-card-title>{{ product.title }}</mat-card-title>
-            <mat-card-content>
-                <div class="productContainer">
-                    <img src="{{ product.image }}" alt="Product Card" width="200" height="200" padding="20px">
-                    <div class="productDesc">
-                        <p>{{ product.description.slice(0, 225) }}</p>
-                        <p><b>${{ product.price }}</b></p>
-                    </div>
-                </div>
-            </mat-card-content>
-            <mat-card-footer>
-                <div class="footer">
-                    <button mat-raised-button color="primary" (click)="addtoCart(product)" *ngIf=" !product.incart ">Add to Cart</button>
-                    <button mat-raised-button color="primary" [disabled]="true" (click)="addtoCart(product)" *ngIf=" product.incart "><fa-icon [icon]="faCheck" class="cartIcon"></fa-icon> Added to Cart</button>
-                </div>
-            </mat-card-footer>
-        </mat-card>
-
-    </div>
+  <div>
+    <mat-card style="height: 375px">
+      <mat-card-title>{{ product.title }}</mat-card-title>
+      <mat-card-content>
+        <div class="productContainer">
+          <img
+            src="{{ product.image }}"
+            alt="Product Card"
+            width="200"
+            height="200"
+            padding="20px"
+          />
+          <div class="productDesc">
+            <p>{{ product.description.slice(0, 225) }}</p>
+            <p>
+              <b>${{ product.price }}</b>
+            </p>
+          </div>
+        </div>
+      </mat-card-content>
+      <mat-card-footer>
+        <div class="footer">
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="addtoCart(product)"
+            *ngIf="!product.incart"
+          >
+            Add to Cart
+          </button>
+          <button
+            mat-raised-button
+            color="primary"
+            [disabled]="true"
+            (click)="addtoCart(product)"
+            *ngIf="product.incart"
+          >
+            <fa-icon [icon]="faCheck" class="cartIcon"></fa-icon> Added to Cart
+          </button>
+        </div>
+      </mat-card-footer>
+    </mat-card>
+  </div>
 </div>

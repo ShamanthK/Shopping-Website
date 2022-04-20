@@ -1,13 +1,19 @@
 import { createAction, props } from '@ngrx/store';
 import { Product } from '../Product';
 
-export const productByCategory = createAction('[Category Component] Category',
-    props<{ product: Product[] }>())
+export const productByCategory = createAction(
+  '[Category Component] Category',
+  props<{ product: Product[] }>()
+);
 
-export const addToCart = createAction('[Product Component] Cart',
-    props<{ product: Product[] }>())
+export const addToCart = createAction(
+  '[Product Component] Cart',
+  props<{ product: Product[] }>()
+);
 
-export const removeFromCart = createAction('[Checkout Component] Cart',
-    props<{ product: Product }>())
+export const removeFromCart = createAction(
+  '[Checkout Component] Cart',
+  props<{ product: Product }>()
+);
 
-export const registerUser = createAction('[Login Component] Register')
+export const registerUser = createAction('[Login Component] Register');

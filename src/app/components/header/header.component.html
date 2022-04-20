@@ -1,7 +1,18 @@
 <div class="header">
-    <h2 class="title">Online Shop</h2>
-    <div class="options">
-        <p *ngFor="let options of headerOptions; let i = index" [ngClass]="{ highlight: i === checkIndex}" (click)="openByCategory(options, i)" style="cursor: pointer">{{ options }}</p>
-        <mat-icon matBadge="{{ numCartItems }}" matBadgeColor="warn" style="position: absolute; right: 65px; top: 20px;"></mat-icon>
-    </div>
+  <h2 class="title">Online Shop</h2>
+  <div class="options">
+    <p
+      *ngFor="let options of headerOptions; let i = index"
+      [ngClass]="{ highlight: i === checkIndex }"
+      (click)="openByCategory(options, i)"
+      style="cursor: pointer"
+    >
+      {{ options }}
+    </p>
+    <mat-icon
+      matBadge="{{ numCartItems }}"
+      matBadgeColor="warn"
+      style="position: absolute; right: 65px; top: 20px"
+    ></mat-icon>
+  </div>
 </div>

@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms'
+import {
+  FormGroup,
+  FormControl,
+  Validators,
+  FormBuilder,
+} from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
 import { registerUser } from 'src/app/ngRx/product.actions';
@@ -9,13 +14,17 @@ import { DataserviceService } from 'src/app/services/dataservice.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+  registerForm: FormGroup;
 
-  registerForm: FormGroup
-
-  constructor(private fb: FormBuilder, public dialogRef: MatDialogRef<LoginComponent>, private store: Store<AppState>, private data: DataserviceService) { }
+  constructor(
+    private fb: FormBuilder,
+    public dialogRef: MatDialogRef<LoginComponent>,
+    private store: Store<AppState>,
+    private data: DataserviceService
+  ) {}
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
@@ -23,15 +32,14 @@ export class LoginComponent implements OnInit {
       lastName: ['', Validators.required],
       email: ['', Validators.required],
       password: ['', Validators.required],
-    })
+    });
   }
 
   registerUser(form: FormGroup) {
-    console.log(form.valid)
+    console.log(form.valid);
     if (form.valid) {
-      this.store.dispatch(registerUser())
+      this.store.dispatch(registerUser());
       this.dialogRef.close();
     }
   }
-
 }

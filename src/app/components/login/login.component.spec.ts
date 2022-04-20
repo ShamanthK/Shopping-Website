@@ -10,14 +10,10 @@ xdescribe('LoginComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        ReactiveFormsModule,
-        MatDialogModule, 
-      ],
-      declarations: [ LoginComponent ],
-      providers: [ MatDialogRef ]
-    })
-    .compileComponents();
+      imports: [ReactiveFormsModule, MatDialogModule],
+      declarations: [LoginComponent],
+      providers: [MatDialogRef],
+    }).compileComponents();
   });
 
   beforeEach(() => {

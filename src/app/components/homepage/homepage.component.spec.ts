@@ -11,15 +11,10 @@ describe('HomepageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [ HomepageComponent ],
-      providers: [
-        { provide: Router, useValue: routerSpy }
-      ]
-    })
-    .compileComponents();
+      imports: [RouterTestingModule],
+      declarations: [HomepageComponent],
+      providers: [{ provide: Router, useValue: routerSpy }],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -33,7 +28,7 @@ describe('HomepageComponent', () => {
   });
 
   it('should navigate to products', () => {
-    component.routeToAllProducts()
+    component.routeToAllProducts();
     expect(routerSpy.navigate).toHaveBeenCalledWith(['/products']);
   });
 });

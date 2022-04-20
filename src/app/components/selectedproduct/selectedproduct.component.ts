@@ -6,21 +6,20 @@ import { DataserviceService } from 'src/app/services/dataservice.service';
 @Component({
   selector: 'app-selectedproduct',
   templateUrl: './selectedproduct.component.html',
-  styleUrls: ['./selectedproduct.component.css']
+  styleUrls: ['./selectedproduct.component.css'],
 })
 export class SelectedproductComponent implements OnInit {
+  subscription: Subscription;
+  selectedProduct: Product;
 
-  subscription: Subscription
-  selectedProduct: Product
-
-  constructor(private dataService: DataserviceService) { 
-    this.subscription = this.dataService.onSelectProduct().subscribe((value) => {
-      console.log(value)
-      this.selectedProduct = value
-    })
+  constructor(private dataService: DataserviceService) {
+    this.subscription = this.dataService
+      .onSelectProduct()
+      .subscribe((value) => {
+        console.log(value);
+        this.selectedProduct = value;
+      });
   }
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

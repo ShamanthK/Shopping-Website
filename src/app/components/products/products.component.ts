@@ -13,53 +13,55 @@ import { faCheck } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrls: ['./products.component.css']
+  styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent implements OnInit {
+  products: Product[] = [];
+  cartItems$: Observable<Product[]>;
+  cartItems: Product[];
+  addedToCart: Product[];
+  faCheck = faCheck;
 
-  products: Product[] = []
-  cartItems$: Observable<Product[]>
-  cartItems: Product[]
-  addedToCart: Product[]
-  faCheck = faCheck
-
-  constructor(private product: ProductsService, private router: Router, private data: DataserviceService, private store: Store<AppState>) { }
+  constructor(
+    private product: ProductsService,
+    private router: Router,
+    private data: DataserviceService,
+    private store: Store<AppState>
+  ) {}
 
   ngOnInit(): void {
     this.product.getAllProducts().subscribe((data) => {
       // console.log('data: ', data)
-      this.products = data
-      this.cartItems$ = this.store.select(getCartItems)
+      this.products = data;
+      this.cartItems$ = this.store.select(getCartItems);
       this.cartItems$.subscribe((data) => {
-        this.cartItems = data
-        console.log(data)
-        this.addedToCart = []
+        this.cartItems = data;
+        console.log(data);
+        this.addedToCart = [];
         this.products.forEach((p) => {
           if (this.cartItems.filter((f) => f.id === p.id).length > 0) {
-            p = { ...p, incart: true }
-            this.addedToCart.push(p)
+            p = { ...p, incart: true };
+            this.addedToCart.push(p);
           } else {
-            p = { ...p, incart: false }
-            this.addedToCart.push(p)
+            p = { ...p, incart: false };
+            this.addedToCart.push(p);
           }
-        })
-      })
-    })
-
+        });
+      });
+    });
   }
 
   openProduct(product: Product) {
-    console.log(product)
-    this.router.navigateByUrl('/products/'+product.id);
+    console.log(product);
+    this.router.navigateByUrl('/products/' + product.id);
     this.product.getSelectedProduct(product).subscribe((p) => {
-      console.log('data: ', p)
+      console.log('data: ', p);
       // this.products = data
-      this.data.openProductPage(p)
-    })
+      this.data.openProductPage(p);
+    });
   }
 
   addtoCart(product: any) {
-    this.store.dispatch(addToCart({ product: product }))
+    this.store.dispatch(addToCart({ product: product }));
   }
-
 }

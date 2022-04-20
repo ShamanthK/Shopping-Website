@@ -13,11 +13,10 @@ describe('CheckoutComponent', () => {
     await TestBed.configureTestingModule({
       imports: [
         StoreModule.forRoot({ categoryProducts: productReducer }),
-        MatSnackBarModule
+        MatSnackBarModule,
       ],
-      declarations: [ CheckoutComponent ]
-    })
-    .compileComponents();
+      declarations: [CheckoutComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -31,9 +30,11 @@ describe('CheckoutComponent', () => {
   });
 
   xit('should update quantity value', () => {
-    component.numCartItems = 3
-    component.orderPlaced = false
-    fixture.debugElement.query(By.css('mat-select')).triggerEventHandler('selectionChange', { value: 3 })
-    expect(component.quantityValue).toEqual(3)
+    component.numCartItems = 3;
+    component.orderPlaced = false;
+    fixture.debugElement
+      .query(By.css('mat-select'))
+      .triggerEventHandler('selectionChange', { value: 3 });
+    expect(component.quantityValue).toEqual(3);
   });
 });

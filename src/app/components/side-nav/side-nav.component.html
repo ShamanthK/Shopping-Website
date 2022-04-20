@@ -1,23 +1,42 @@
-<mat-toolbar class="position-fixed" style="padding: 0px; background-color: black;">
-    <div style="padding: 20px;">
-        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
-            style="color: white;">
-            <mat-icon (click)="drawer.toggle()">menu</mat-icon>
-        </button>
-    </div>
-    <app-header></app-header>
+<mat-toolbar
+  class="position-fixed"
+  style="padding: 0px; background-color: black"
+>
+  <div style="padding: 20px">
+    <button
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+      style="color: white"
+    >
+      <mat-icon (click)="drawer.toggle()">menu</mat-icon>
+    </button>
+  </div>
+  <app-header></app-header>
 </mat-toolbar>
 
 <mat-drawer-container class="example-container" autosize [hasBackdrop]="false">
-    <mat-drawer #drawer class="example-sidenav" mode="side" style="background-color: black;">
-        <div class="options">
-            <div class="header">
-                <p *ngFor="let options of headerOptions; let i = index" [ngClass]="{ highlight: i === checkIndex}" (click)="openByCategory(options, i)" style="cursor: pointer">{{ options }}</p>
-            </div>
-        </div>
-    </mat-drawer>
-
-    <div class="example-sidenav-content">
-        <router-outlet></router-outlet>
+  <mat-drawer
+    #drawer
+    class="example-sidenav"
+    mode="side"
+    style="background-color: black"
+  >
+    <div class="options">
+      <div class="header">
+        <p
+          *ngFor="let options of headerOptions; let i = index"
+          [ngClass]="{ highlight: i === checkIndex }"
+          (click)="openByCategory(options, i)"
+          style="cursor: pointer"
+        >
+          {{ options }}
+        </p>
+      </div>
     </div>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <router-outlet></router-outlet>
+  </div>
 </mat-drawer-container>

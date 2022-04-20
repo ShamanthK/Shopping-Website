@@ -14,11 +14,10 @@ describe('CategoryComponent', () => {
     await TestBed.configureTestingModule({
       imports: [
         RouterTestingModule,
-        StoreModule.forRoot({ categoryProducts: productReducer })
+        StoreModule.forRoot({ categoryProducts: productReducer }),
       ],
-      declarations: [ CategoryComponent ]
-    })
-    .compileComponents();
+      declarations: [CategoryComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -32,15 +31,34 @@ describe('CategoryComponent', () => {
   });
 
   it('should add product to cart', () => {
-    const selectedProduct: Product[] = [{id: 1, description: 'Mens Clothes', category: 'clothing', image: '', price: 100, title: 'T-Shirt', rating: { user: 3 }}]
-    component.addtoCart(selectedProduct)
+    const selectedProduct: Product[] = [
+      {
+        id: 1,
+        description: 'Mens Clothes',
+        category: 'clothing',
+        image: '',
+        price: 100,
+        title: 'T-Shirt',
+        rating: { user: 3 },
+      },
+    ];
+    component.addtoCart(selectedProduct);
   });
 
   it('should get cart items', () => {
-    const selectedProduct: Product[] = [{id: 1, description: 'Mens Clothes', category: 'clothing', image: '', price: 100, title: 'T-Shirt', rating: { user: 3 }}]
-    component.productState$ = of(selectedProduct)
-    component.cartItems$ = of(selectedProduct)
-    component.ngOnInit()
+    const selectedProduct: Product[] = [
+      {
+        id: 1,
+        description: 'Mens Clothes',
+        category: 'clothing',
+        image: '',
+        price: 100,
+        title: 'T-Shirt',
+        rating: { user: 3 },
+      },
+    ];
+    component.productState$ = of(selectedProduct);
+    component.cartItems$ = of(selectedProduct);
+    component.ngOnInit();
   });
-  
 });

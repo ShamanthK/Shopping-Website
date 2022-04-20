@@ -5,22 +5,19 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
-  styleUrls: ['./homepage.component.css']
+  styleUrls: ['./homepage.component.css'],
 })
 export class HomepageComponent implements OnInit {
+  exploreAll: string = 'Explore All Products';
+  isAuthenticated: boolean;
+  subscription: Subscription;
 
-  exploreAll: string = 'Explore All Products'
-  isAuthenticated: boolean
-  subscription: Subscription
+  constructor(private router: Router) {}
 
-  constructor(private router: Router) { 
-  }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   routeToAllProducts() {
-    console.log('clicked', this.isAuthenticated)
-    this.router.navigate(['/products'])
+    console.log('clicked', this.isAuthenticated);
+    this.router.navigate(['/products']);
   }
 }
