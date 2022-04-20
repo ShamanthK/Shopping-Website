@@ -1,0 +1,29 @@
+.options {
+    width: 250px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    justify-content: space-between;
+    height: 36vh;
+    color: white;
+}
+
+.highlight {
+    color: orangered
+}
+
+.example-sidenav-content {
+    height: 93vh;
+}
+
+@media screen 
+  and (min-width: 1000px) 
+  and (max-width: 1600px)  { 
+    .example-sidenav-content {
+        height: 89vh;
+    }
+}

@@ -1,10 +1,18 @@
 .header {
-    width: 100%;
+    width: 95vw;
     background-color: black;
     height: 70px;
     border-bottom-color: black;
     display: flex;
     justify-content: space-between;
+}
+
+@media screen 
+  and (min-width: 1000px) 
+  and (max-width: 1600px)  { 
+    .header {
+        width: 92vw;
+    }
 }
 
 .title {
@@ -16,10 +24,11 @@
 .options {
     color: white;
     padding-right: 50px;
-    margin-top: 25px;
+    margin-top: 20px;
     display: flex; 
     justify-content: space-between;
     width: 800px;
+    font-size: 15px;
 }
 
 .highlight {

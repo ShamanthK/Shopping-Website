@@ -16,6 +16,8 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { HeaderComponent } from './components/header/header.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { appRoutes } from './routes';
@@ -29,6 +31,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { SuccessOrderComponent } from './components/success-order/success-order.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+import { SideNavComponent } from './components/side-nav/side-nav.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +43,8 @@ import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
     CategoryComponent,
     CheckoutComponent,
     SuccessOrderComponent,
-    LoginComponent
+    LoginComponent,
+    SideNavComponent
   ],
   imports: [
     BrowserModule,
@@ -58,6 +62,8 @@ import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
+    MatToolbarModule,
+    MatSidenavModule,
     FormsModule,
     ReactiveFormsModule ,
     StoreModule.forRoot({ categoryProducts: productReducer })
