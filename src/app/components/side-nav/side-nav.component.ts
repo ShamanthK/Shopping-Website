@@ -31,22 +31,22 @@ export class SideNavComponent implements OnInit {
 
   ngOnInit(): void {
     this.headerOptions = ['home'];
-    this.product.getCategories().subscribe((data) => {
-      data.forEach((c) => {
+    this.product.getCategories().subscribe(data => {
+      data.forEach(c => {
         this.headerOptions.push(c);
       });
     });
     this.getItems$ = this.store.select(getCartItems);
-    this.getItems$.subscribe((data) => {
+    this.getItems$.subscribe(data => {
       this.numCartItems = data.length;
     });
     this.isAuthenticated$ = this.store.select(getLoginStatus);
   }
 
   openByCategory(product: string, i: number) {
-    this.isAuthenticated$.subscribe((login) => {
+    this.isAuthenticated$.subscribe(login => {
       if (login) {
-        this.product.getProductByCategory(product).subscribe((data) => {
+        this.product.getProductByCategory(product).subscribe(data => {
           this.store.dispatch(productByCategory({ product: data }));
           if (product === 'home') {
             this.router.navigate(['/']);
@@ -62,7 +62,7 @@ export class SideNavComponent implements OnInit {
           // data: {name: this.name, animal: this.animal},
         });
 
-        dialogRef.afterClosed().subscribe((result) => {
+        dialogRef.afterClosed().subscribe(result => {
           console.log('The dialog was closed');
           // this.animal = result;
         });

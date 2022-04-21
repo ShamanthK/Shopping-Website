@@ -27,18 +27,16 @@ export class ExplorepageComponent implements OnInit {
     private dataService: DataserviceService,
     private store: Store<AppState>
   ) {
-    this.subscription = this.dataService
-      .onAuthentication()
-      .subscribe((value) => {
-        this.isAuthenticated = value;
-      });
+    this.subscription = this.dataService.onAuthentication().subscribe(value => {
+      this.isAuthenticated = value;
+    });
     this.isAuthenticated$ = this.store.select(getLoginStatus);
   }
 
   ngOnInit(): void {}
 
   exploreAll() {
-    this.isAuthenticated$.subscribe((login) => {
+    this.isAuthenticated$.subscribe(login => {
       if (login) {
         this.openProductPage.emit();
       } else {
@@ -47,7 +45,7 @@ export class ExplorepageComponent implements OnInit {
           // data: {name: this.name, animal: this.animal},
         });
 
-        dialogRef.afterClosed().subscribe((result) => {
+        dialogRef.afterClosed().subscribe(result => {
           // this.animal = result;
         });
       }

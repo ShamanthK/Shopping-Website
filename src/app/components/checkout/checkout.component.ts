@@ -37,10 +37,10 @@ export class CheckoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.cartItems$ = this.store.select(getCartItems);
-    this.cartItems$.subscribe((data) => {
+    this.cartItems$.subscribe(data => {
       console.log(data);
       this.numCartItems = data.length;
-      data.forEach((p) => {
+      data.forEach(p => {
         this.totalPrice = this.totalPrice + p.price;
       });
       this.tax = parseInt((this.totalPrice * 0.1).toFixed(2));

@@ -27,14 +27,14 @@ export class CategoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.productState$ = this.store.select(getCategoryProducts);
-    this.productState$.subscribe((data) => {
+    this.productState$.subscribe(data => {
       this.cartItems$ = this.store.select(getCartItems);
-      this.cartItems$.subscribe((cart) => {
+      this.cartItems$.subscribe(cart => {
         this.cartItems = cart;
         // console.log(cart)
         this.addedToCart = [];
-        data.forEach((p) => {
-          if (this.cartItems.filter((f) => f.id === p.id).length > 0) {
+        data.forEach(p => {
+          if (this.cartItems.filter(f => f.id === p.id).length > 0) {
             p = { ...p, incart: true };
             this.addedToCart.push(p);
           } else {

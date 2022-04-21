@@ -3,8 +3,7 @@
   <form
     class="add-form"
     [formGroup]="registerForm"
-    (ngSubmit)="registerUser(registerForm)"
-  >
+    (ngSubmit)="registerUser(registerForm)">
     <div class="form-control" style="padding: 20px">
       <mat-form-field>
         <mat-label>First Name</mat-label>
@@ -15,8 +14,7 @@
           registerForm.get('firstName')?.hasError('required') &&
           registerForm.get('firstName')?.touched
         "
-        style="color: red"
-      >
+        style="color: red">
         Please provide a first name.
       </div>
     </div>
@@ -30,8 +28,7 @@
           registerForm.get('firstName')?.hasError('required') &&
           registerForm.get('firstName')?.touched
         "
-        style="color: red"
-      >
+        style="color: red">
         Please provide a last name.
       </div>
     </div>
@@ -45,8 +42,7 @@
           registerForm.get('firstName')?.hasError('required') &&
           registerForm.get('firstName')?.touched
         "
-        style="color: red"
-      >
+        style="color: red">
         Please provide an email address.
       </div>
     </div>
@@ -60,8 +56,7 @@
           registerForm.get('firstName')?.hasError('required') &&
           registerForm.get('firstName')?.touched
         "
-        style="color: red"
-      >
+        style="color: red">
         Please provide a password.
       </div>
     </div>

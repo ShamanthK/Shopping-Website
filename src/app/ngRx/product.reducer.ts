@@ -33,7 +33,7 @@ export const productReducer = createReducer(
     ...state,
     cart: state.cart.filter((c: Product) => c.id !== product.id),
   })),
-  on(registerUser, (state) => ({
+  on(registerUser, state => ({
     ...state,
     login: !state.login,
   }))

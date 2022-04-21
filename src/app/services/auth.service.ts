@@ -17,12 +17,10 @@ export class AuthService {
     private dataService: DataserviceService
   ) {
     // this.isAuthenticated$ = this.store.select(getLoginStatus)
-    this.subscription = this.dataService
-      .onAuthentication()
-      .subscribe((value) => {
-        console.log('value:', value);
-        this.isAuthenticated = value;
-      });
+    this.subscription = this.dataService.onAuthentication().subscribe(value => {
+      console.log('value:', value);
+      this.isAuthenticated = value;
+    });
   }
 
   isAuthenticatedUser() {

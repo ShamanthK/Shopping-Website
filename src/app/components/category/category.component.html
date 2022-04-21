@@ -9,8 +9,7 @@
             alt="Product Card"
             width="200"
             height="200"
-            padding="20px"
-          />
+            padding="20px" />
           <div class="productDesc">
             <p>{{ product.description.slice(0, 225) }}</p>
             <p>
@@ -25,8 +24,7 @@
             mat-raised-button
             color="primary"
             (click)="addtoCart(product)"
-            *ngIf="!product.incart"
-          >
+            *ngIf="!product.incart">
             Add to Cart
           </button>
           <button
@@ -34,8 +32,7 @@
             color="primary"
             [disabled]="true"
             (click)="addtoCart(product)"
-            *ngIf="product.incart"
-          >
+            *ngIf="product.incart">
             <fa-icon [icon]="faCheck" class="cartIcon"></fa-icon> Added to Cart
           </button>
         </div>

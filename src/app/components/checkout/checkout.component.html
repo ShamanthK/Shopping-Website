@@ -5,8 +5,7 @@
         <fa-icon
           [icon]="faXmark"
           style="float: right; font-size: 25px; cursor: pointer"
-          (click)="removeCartItem(item)"
-        ></fa-icon>
+          (click)="removeCartItem(item)"></fa-icon>
         <div class="itemContainer">
           <img
             src="{{ item.image }}"
@@ -14,8 +13,7 @@
             width="200"
             height="200"
             padding="20px"
-            style="border: 1px solid"
-          />
+            style="border: 1px solid" />
           <div style="padding: 35px">
             <h1>{{ item.title }}</h1>
             <p>${{ item.price * quantityValue }}</p>
@@ -23,8 +21,7 @@
               <mat-label>Quantity</mat-label>
               <mat-select
                 (selectionChange)="selectedQuantity($event)"
-                class="mat-select"
-              >
+                class="mat-select">
                 <mat-option *ngFor="let q of quantity" [value]="q.value">
                   {{ q.viewValue }}
                 </mat-option>
@@ -68,8 +65,7 @@
               mat-raised-button
               color="primary"
               style="width: 300px"
-              (click)="placeOrder()"
-            >
+              (click)="placeOrder()">
               Place Order
             </button>
           </div>

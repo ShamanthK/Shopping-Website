@@ -13,12 +13,10 @@ export class SelectedproductComponent implements OnInit {
   selectedProduct: Product;
 
   constructor(private dataService: DataserviceService) {
-    this.subscription = this.dataService
-      .onSelectProduct()
-      .subscribe((value) => {
-        console.log(value);
-        this.selectedProduct = value;
-      });
+    this.subscription = this.dataService.onSelectProduct().subscribe(value => {
+      console.log(value);
+      this.selectedProduct = value;
+    });
   }
 
   ngOnInit(): void {}

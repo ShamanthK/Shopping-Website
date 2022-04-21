@@ -30,16 +30,16 @@ export class ProductsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.product.getAllProducts().subscribe((data) => {
+    this.product.getAllProducts().subscribe(data => {
       // console.log('data: ', data)
       this.products = data;
       this.cartItems$ = this.store.select(getCartItems);
-      this.cartItems$.subscribe((data) => {
+      this.cartItems$.subscribe(data => {
         this.cartItems = data;
         console.log(data);
         this.addedToCart = [];
-        this.products.forEach((p) => {
-          if (this.cartItems.filter((f) => f.id === p.id).length > 0) {
+        this.products.forEach(p => {
+          if (this.cartItems.filter(f => f.id === p.id).length > 0) {
             p = { ...p, incart: true };
             this.addedToCart.push(p);
           } else {
@@ -54,7 +54,7 @@ export class ProductsComponent implements OnInit {
   openProduct(product: Product) {
     console.log(product);
     this.router.navigateByUrl('/products/' + product.id);
-    this.product.getSelectedProduct(product).subscribe((p) => {
+    this.product.getSelectedProduct(product).subscribe(p => {
       console.log('data: ', p);
       // this.products = data
       this.data.openProductPage(p);
