@@ -1,89 +1,98 @@
-<div class="cartItems" *ngIf="numCartItems > 0 && !orderPlaced">
-  <div>
-    <mat-card class="cartItem" *ngFor="let item of cartItems$ | async">
-      <mat-card-content>
-        <fa-icon
-          [icon]="faXmark"
-          style="float: right; font-size: 25px; cursor: pointer"
-          (click)="removeCartItem(item)"></fa-icon>
-        <div class="itemContainer">
-          <img
-            src="{{ item.image }}"
-            alt="Product Card"
-            width="200"
-            height="200"
-            padding="20px"
-            style="border: 1px solid" />
-          <div style="padding: 35px">
-            <h1>{{ item.title }}</h1>
-            <p>${{ item.price * quantityValue }}</p>
-            <mat-form-field appearance="fill">
-              <mat-label>Quantity</mat-label>
-              <mat-select
-                (selectionChange)="selectedQuantity($event)"
-                class="mat-select">
-                <mat-option *ngFor="let q of quantity" [value]="q.value">
-                  {{ q.viewValue }}
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
+<div *ngIf="numCartItems > 0 && !orderPlaced" class="container-fluid cartItems">
+  <div class="row">
+    <div class="col-xl-8">
+      <mat-card class="cartItem" *ngFor="let item of cartItems$ | async">
+        <mat-card-content>
+          <fa-icon
+            [icon]="faXmark"
+            style="float: right; font-size: 25px; cursor: pointer"
+            (click)="removeCartItem(item)"></fa-icon>
+          <div class="itemContainer">
+            <img
+              src="{{ item.image }}"
+              alt="Product Card"
+              width="200"
+              height="200"
+              padding="20px"
+              style="border: 1px solid" />
+            <div style="padding: 35px">
+              <h1>{{ item.title }}</h1>
+              <p>${{ item.price * quantityValue }}</p>
+              <mat-form-field appearance="fill">
+                <mat-label>Quantity</mat-label>
+                <mat-select
+                  (selectionChange)="selectedQuantity($event)"
+                  class="mat-select">
+                  <mat-option *ngFor="let q of quantity" [value]="q.value">
+                    {{ q.viewValue }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
           </div>
-        </div>
-      </mat-card-content>
-    </mat-card>
-  </div>
-  <mat-card class="totalCard">
-    <mat-card-content>
-      <div style="padding: 20px">
-        <div>
-          <div class="totalHeader">
-            <h1>Total</h1>
-            <h1>${{ totalPrice + tax }}</h1>
-          </div>
-          <hr />
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div class="col-xl-4">
+      <mat-card class="totalCard">
+        <mat-card-content>
           <div style="padding: 20px">
-            <div class="total">
-              <p>Sub-Total</p>
-              <p>
-                <b>${{ totalPrice }}</b>
-              </p>
-            </div>
-            <div class="total">
-              <p>Tax</p>
-              <p>
-                <b>${{ tax }}</b>
-              </p>
-            </div>
-            <div class="total">
-              <p>Delivery (Free)</p>
-              <p><b>$0.00</b></p>
+            <div>
+              <div class="totalHeader">
+                <h1>Total</h1>
+                <h1>${{ totalPrice + tax }}</h1>
+              </div>
+              <hr />
+              <div style="padding: 20px">
+                <div class="total">
+                  <p>Sub-Total</p>
+                  <p>
+                    <b>${{ totalPrice }}</b>
+                  </p>
+                </div>
+                <div class="total">
+                  <p>Tax</p>
+                  <p>
+                    <b>${{ tax }}</b>
+                  </p>
+                </div>
+                <div class="total">
+                  <p>Delivery (Free)</p>
+                  <p><b>$0.00</b></p>
+                </div>
+              </div>
+              <hr />
+              <div class="buttonContainer">
+                <button
+                  mat-raised-button
+                  color="primary"
+                  style="width: 300px"
+                  (click)="placeOrder()">
+                  Place Order
+                </button>
+              </div>
             </div>
           </div>
-          <hr />
-          <div class="buttonContainer">
-            <button
-              mat-raised-button
-              color="primary"
-              style="width: 300px"
-              (click)="placeOrder()">
-              Place Order
-            </button>
-          </div>
-        </div>
-      </div>
-    </mat-card-content>
-  </mat-card>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
 </div>
-<div class="delivery" *ngIf="numCartItems > 0 && !orderPlaced">
-  <mat-card class="freeCard">
-    <mat-card-content>
-      <div class="productContainer">
-        <div>Free Standard Delivery</div>
-        <div>Faster Delivery Options available to most cities</div>
-        <div><a href="/">More Info</a></div>
-      </div>
-    </mat-card-content>
-  </mat-card>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-8" *ngIf="numCartItems > 0 && !orderPlaced">
+      <mat-card class="freeCard">
+        <mat-card-content>
+          <div class="productContainer">
+            <div>Free Standard Delivery</div>
+            <div>Faster Delivery Options available to most cities</div>
+            <div><a href="/">More Info</a></div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
 </div>
 
 <div *ngIf="numCartItems === 0" class="noCartContainer">

@@ -1,4 +1,4 @@
-.cartItems {
+/* .cartItems {
   display: flex;
   justify-content: space-between;
   padding: 50px;
@@ -8,7 +8,7 @@
   .cartItems {
     padding: 25px;
   }
-}
+} */
 
 .total {
   display: flex;
@@ -48,40 +48,40 @@
 }
 
 .cartItem {
-  width: 1200px;
+  /* width: 1200px; */
   margin-bottom: 20px;
 }
 
-@media screen and (min-width: 1000px) and (max-width: 1600px) {
+/* @media screen and (min-width: 1000px) and (max-width: 1600px) {
   .cartItem {
     width: 780px;
   }
-}
+} */
 
-@media screen and (min-width: 1620px) and (max-width: 1800px) and (max-height: 2880px) {
+/* @media screen and (min-width: 1620px) and (max-width: 1800px) and (max-height: 2880px) {
   .cartItem {
     width: 1150px;
   }
-}
+} */
 
 .totalCard {
-  width: 500px;
+  /* width: 500px; */
   height: 325px;
 }
 
-@media screen and (min-width: 1000px) and (max-width: 1600px) {
+/* @media screen and (min-width: 1000px) and (max-width: 1600px) {
   .totalCard {
     width: 350px;
   }
-}
+} */
 
-@media screen and (min-width: 1620px) and (max-width: 1800px) and (max-height: 2880px) {
+/* @media screen and (min-width: 1620px) and (max-width: 1800px) and (max-height: 2880px) {
   .totalCard {
     width: 435px;
   }
-}
+} */
 
-.freeCard {
+/* .freeCard {
   width: 1200px;
 }
 
@@ -95,7 +95,7 @@
   .freeCard {
     width: 1150px;
   }
-}
+} */
 
 .delivery {
   padding-left: 50px;
