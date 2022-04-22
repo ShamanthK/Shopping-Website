@@ -1,7 +1,8 @@
 .productCard {
-  padding: 25px;
-  width: 575px;
-  display: inline-flex;
+  /* padding: 25px;
+  width: 575px; */
+  /* display: inline-flex; */
+  padding-bottom: 25px;
 }
 
 .productContainer {
@@ -18,4 +19,10 @@
   margin-top: 20px;
   display: flex;
   justify-content: space-evenly;
+}
+
+@media screen and (min-width: 1920px) {
+  .col-xl-6 {
+    width: 33.33%;
+  }
 }

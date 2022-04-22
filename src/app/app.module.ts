@@ -32,6 +32,8 @@ import { SuccessOrderComponent } from './components/success-order/success-order.
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,6 +69,7 @@ import { SideNavComponent } from './components/side-nav/side-nav.component';
     FormsModule,
     ReactiveFormsModule,
     StoreModule.forRoot({ categoryProducts: productReducer }),
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
