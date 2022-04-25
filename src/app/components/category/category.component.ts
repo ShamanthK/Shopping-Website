@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { addToCart } from 'src/app/ngRx/product.actions';
+import { addToCart, sendProducts } from 'src/app/ngRx/product.actions';
 import {
   getCartItems,
   getCategoryProducts,
 } from 'src/app/ngRx/product.selector';
 import { AppState } from 'src/app/ngRx/product.state';
 import { Product } from 'src/app/Product';
-import { faCheck } from '@fortawesome/free-solid-svg-icons';
 import { ThemePalette } from '@angular/material/core';
 import { ProgressSpinnerMode } from '@angular/material/progress-spinner';
 import { ProductsService } from 'src/app/services/products.service';
@@ -22,7 +21,6 @@ export class CategoryComponent implements OnInit {
   cartItems$: Observable<Product[]>;
   cartItems: Product[];
   addedToCart: Product[];
-  faCheck = faCheck;
   color: ThemePalette = 'primary';
   mode: ProgressSpinnerMode = 'indeterminate';
   value: number = 50;
@@ -52,13 +50,10 @@ export class CategoryComponent implements OnInit {
               this.addedToCart.push(p);
             }
           });
+          this.store.dispatch(sendProducts({ product: this.addedToCart }));
           this.isLoading = false;
         });
       });
     });
-  }
-
-  addtoCart(product: any) {
-    this.store.dispatch(addToCart({ product: product }));
   }
 }

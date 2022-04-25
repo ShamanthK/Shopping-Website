@@ -34,6 +34,7 @@ import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SuccessOrderComponent,
     LoginComponent,
     SideNavComponent,
+    ProductCardComponent,
   ],
   imports: [
     BrowserModule,

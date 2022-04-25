@@ -5,18 +5,21 @@ import {
   addToCart,
   removeFromCart,
   registerUser,
+  sendProducts,
 } from './product.actions';
 
 export interface productState {
   products: string;
   cart: any;
   login: boolean;
+  productList: Product[];
 }
 
 export const initialState: productState = {
   products: '',
   cart: [],
   login: false,
+  productList: [],
 };
 
 export const productReducer = createReducer(
@@ -24,6 +27,10 @@ export const productReducer = createReducer(
   on(productByCategory, (state, { product }) => ({
     ...state,
     products: product,
+  })),
+  on(sendProducts, (state, { product }) => ({
+    ...state,
+    productList: product,
   })),
   on(addToCart, (state, { product }) => ({
     ...state,

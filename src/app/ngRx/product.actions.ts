@@ -16,4 +16,9 @@ export const removeFromCart = createAction(
   props<{ product: Product }>()
 );
 
+export const sendProducts = createAction(
+  '[Category Component] Cart',
+  props<{ product: Product[] }>()
+);
+
 export const registerUser = createAction('[Login Component] Register');

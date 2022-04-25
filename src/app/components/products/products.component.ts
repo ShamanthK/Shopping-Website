@@ -5,7 +5,7 @@ import { DataserviceService } from 'src/app/services/dataservice.service';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AppState } from 'src/app/ngRx/product.state';
-import { addToCart } from 'src/app/ngRx/product.actions';
+import { addToCart, sendProducts } from 'src/app/ngRx/product.actions';
 import { getCartItems } from 'src/app/ngRx/product.selector';
 import { Observable } from 'rxjs';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
@@ -30,8 +30,6 @@ export class ProductsComponent implements OnInit {
 
   constructor(
     private product: ProductsService,
-    private router: Router,
-    private data: DataserviceService,
     private store: Store<AppState>
   ) {}
 
@@ -54,21 +52,8 @@ export class ProductsComponent implements OnInit {
           }
         });
         this.isLoading = false;
+        this.store.dispatch(sendProducts({ product: this.addedToCart }));
       });
     });
-  }
-
-  openProduct(product: Product) {
-    console.log(product);
-    this.router.navigateByUrl('/products/' + product.id);
-    this.product.getSelectedProduct(product).subscribe(p => {
-      console.log('data: ', p);
-      // this.products = data
-      this.data.openProductPage(p);
-    });
-  }
-
-  addtoCart(product: any) {
-    this.store.dispatch(addToCart({ product: product }));
   }
 }

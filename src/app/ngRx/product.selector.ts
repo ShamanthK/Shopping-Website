@@ -20,3 +20,10 @@ export const getLoginStatus = createSelector(
     return state.login;
   }
 );
+
+export const getProductList = createSelector(
+  appCount,
+  (state: productState) => {
+    return state.productList;
+  }
+);
