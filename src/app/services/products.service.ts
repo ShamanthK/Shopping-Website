@@ -7,27 +7,23 @@ import { Product } from '../Product';
   providedIn: 'root',
 })
 export class ProductsService {
-  private productsUrl = 'https://fakestoreapi.com/products';
-  private categoriesUrl = 'https://fakestoreapi.com/products/categories';
-  private productCategoryUrl = 'https://fakestoreapi.com/products/category';
-
   constructor(private http: HttpClient) {}
 
   getAllProducts(): Observable<Product[]> {
-    return this.http.get<Product[]>(this.productsUrl);
+    return this.http.get<Product[]>('/products');
   }
 
   getSelectedProduct(product: Product): Observable<Product[]> {
-    const url = `${this.productsUrl}/${product.id}`;
+    const url = `/products/${product.id}`;
     return this.http.get<Product[]>(url);
   }
 
   getCategories(): Observable<Array<string>> {
-    return this.http.get<Array<string>>(this.categoriesUrl);
+    return this.http.get<Array<string>>('/products/categories');
   }
 
   getProductByCategory(product: any): Observable<any> {
-    const url = `${this.productCategoryUrl}/${product}`;
+    const url = `/products/category/${product}`;
     return this.http.get<Product[]>(url);
   }
 }
