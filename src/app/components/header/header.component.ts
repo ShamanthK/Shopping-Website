@@ -47,16 +47,14 @@ export class HeaderComponent implements OnInit {
   openByCategory(product: string, i: number) {
     this.isAuthenticated$.subscribe(login => {
       if (login) {
-        this.product.getProductByCategory(product).subscribe(data => {
-          this.store.dispatch(productByCategory({ product: data }));
-          if (product === 'home') {
-            this.router.navigate(['/']);
-          } else if (product === 'checkout') {
-            this.router.navigate(['/checkout']);
-          } else {
-            this.router.navigate(['/category/' + product]);
-          }
-        });
+        if (product === 'home') {
+          this.router.navigate(['/']);
+        } else if (product === 'checkout') {
+          this.router.navigate(['/checkout']);
+        } else {
+          this.router.navigate(['/category/' + product]);
+          this.store.dispatch(productByCategory({ product: product }));
+        }
       } else {
         const dialogRef = this.dialog.open(LoginComponent, {
           width: '275px',

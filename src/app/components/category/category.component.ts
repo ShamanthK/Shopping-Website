@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { addToCart } from 'src/app/ngRx/product.actions';
@@ -10,37 +9,50 @@ import {
 import { AppState } from 'src/app/ngRx/product.state';
 import { Product } from 'src/app/Product';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
-
+import { ThemePalette } from '@angular/material/core';
+import { ProgressSpinnerMode } from '@angular/material/progress-spinner';
+import { ProductsService } from 'src/app/services/products.service';
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',
   styleUrls: ['./category.component.css'],
 })
 export class CategoryComponent implements OnInit {
-  productState$: Observable<Product[]>;
+  productState$: Observable<string>;
   cartItems$: Observable<Product[]>;
   cartItems: Product[];
   addedToCart: Product[];
   faCheck = faCheck;
+  color: ThemePalette = 'primary';
+  mode: ProgressSpinnerMode = 'indeterminate';
+  value: number = 50;
+  isLoading: boolean = true;
 
-  constructor(private router: Router, private store: Store<AppState>) {}
+  constructor(
+    private store: Store<AppState>,
+    private product: ProductsService
+  ) {}
 
   ngOnInit(): void {
     this.productState$ = this.store.select(getCategoryProducts);
-    this.productState$.subscribe(data => {
-      this.cartItems$ = this.store.select(getCartItems);
-      this.cartItems$.subscribe(cart => {
-        this.cartItems = cart;
-        // console.log(cart)
-        this.addedToCart = [];
-        data.forEach(p => {
-          if (this.cartItems.filter(f => f.id === p.id).length > 0) {
-            p = { ...p, incart: true };
-            this.addedToCart.push(p);
-          } else {
-            p = { ...p, incart: false };
-            this.addedToCart.push(p);
-          }
+    this.productState$.subscribe(product => {
+      console.log('category: ', product);
+      this.product.getProductByCategory(product).subscribe(data => {
+        this.cartItems$ = this.store.select(getCartItems);
+        this.cartItems$.subscribe(cart => {
+          this.cartItems = cart;
+          // console.log(cart)
+          this.addedToCart = [];
+          data.forEach((p: any) => {
+            if (this.cartItems.filter(f => f.id === p.id).length > 0) {
+              p = { ...p, incart: true };
+              this.addedToCart.push(p);
+            } else {
+              p = { ...p, incart: false };
+              this.addedToCart.push(p);
+            }
+          });
+          this.isLoading = false;
         });
       });
     });

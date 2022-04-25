@@ -3,7 +3,7 @@ import { Product } from '../Product';
 
 export const productByCategory = createAction(
   '[Category Component] Category',
-  props<{ product: Product[] }>()
+  props<{ product: string }>()
 );
 
 export const addToCart = createAction(

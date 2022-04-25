@@ -9,6 +9,8 @@ import { addToCart } from 'src/app/ngRx/product.actions';
 import { getCartItems } from 'src/app/ngRx/product.selector';
 import { Observable } from 'rxjs';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { ThemePalette } from '@angular/material/core';
+import { ProgressSpinnerMode } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-products',
@@ -21,6 +23,10 @@ export class ProductsComponent implements OnInit {
   cartItems: Product[];
   addedToCart: Product[];
   faCheck = faCheck;
+  color: ThemePalette = 'primary';
+  mode: ProgressSpinnerMode = 'indeterminate';
+  value: number = 50;
+  isLoading: boolean = true;
 
   constructor(
     private product: ProductsService,
@@ -47,6 +53,7 @@ export class ProductsComponent implements OnInit {
             this.addedToCart.push(p);
           }
         });
+        this.isLoading = false;
       });
     });
   }

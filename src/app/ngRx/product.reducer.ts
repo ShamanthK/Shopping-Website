@@ -8,13 +8,13 @@ import {
 } from './product.actions';
 
 export interface productState {
-  products: Product[];
+  products: string;
   cart: any;
   login: boolean;
 }
 
 export const initialState: productState = {
-  products: [],
+  products: '',
   cart: [],
   login: false,
 };
