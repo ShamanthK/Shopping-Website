@@ -51,4 +51,8 @@ export class ExplorepageComponent implements OnInit {
       }
     });
   }
+
+  logOut() {
+    localStorage.setItem('loggedIn', 'No');
+  }
 }

@@ -27,3 +27,7 @@ export const getProductList = createSelector(
     return state.productList;
   }
 );
+
+export const getLoggedIn = createSelector(appCount, (state: productState) => {
+  return state.setLogin;
+});

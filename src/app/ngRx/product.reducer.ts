@@ -6,6 +6,7 @@ import {
   removeFromCart,
   registerUser,
   sendProducts,
+  loginUser,
 } from './product.actions';
 
 export interface productState {
@@ -13,6 +14,7 @@ export interface productState {
   cart: any;
   login: boolean;
   productList: Product[];
+  setLogin: string | null;
 }
 
 export const initialState: productState = {
@@ -20,6 +22,7 @@ export const initialState: productState = {
   cart: [],
   login: false,
   productList: [],
+  setLogin: localStorage.getItem('loggedIn'),
 };
 
 export const productReducer = createReducer(
@@ -43,5 +46,9 @@ export const productReducer = createReducer(
   on(registerUser, state => ({
     ...state,
     login: !state.login,
+  })),
+  on(loginUser, (state, { login }) => ({
+    ...state,
+    setLogin: login,
   }))
 );

@@ -11,20 +11,21 @@ import { DataserviceService } from './dataservice.service';
 export class AuthService {
   isAuthenticated: boolean;
   subscription: Subscription;
+  isAuthenticated$: Observable<boolean>;
 
   constructor(
     private store: Store<AppState>,
     private dataService: DataserviceService
   ) {
-    // this.isAuthenticated$ = this.store.select(getLoginStatus)
-    this.subscription = this.dataService.onAuthentication().subscribe(value => {
-      console.log('value:', value);
-      this.isAuthenticated = value;
-    });
+    this.isAuthenticated$ = this.store.select(getLoginStatus);
   }
 
   isAuthenticatedUser() {
-    console.log('this.isAuthenticated: ', this.isAuthenticated);
-    return this.isAuthenticated;
+    // this.isAuthenticated$.subscribe(login => {
+    //   console.log('auth:', login);
+    // });
+    const isLoggedIn = localStorage.getItem('loggedIn');
+    console.log(isLoggedIn);
+    return isLoggedIn;
   }
 }

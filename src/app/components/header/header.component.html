@@ -11,6 +11,11 @@
     <mat-icon
       matBadge="{{ numCartItems }}"
       matBadgeColor="warn"
-      style="position: absolute; right: 65px; top: 20px"></mat-icon>
+      style="position: absolute; right: 180px; top: 20px"></mat-icon>
+    <div>
+      <button mat-raised-button color="primary" (click)="logOut()">
+        {{ getLoggedIn === 'Yes' ? 'Logout' : 'Login' }}
+      </button>
+    </div>
   </div>
 </div>

@@ -22,3 +22,8 @@ export const sendProducts = createAction(
 );
 
 export const registerUser = createAction('[Login Component] Register');
+
+export const loginUser = createAction(
+  '[Login Component] Login',
+  props<{ login: string | null }>()
+);
