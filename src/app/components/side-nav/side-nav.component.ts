@@ -48,11 +48,14 @@ export class SideNavComponent implements OnInit {
       if (login) {
         this.product.getProductByCategory(product).subscribe(data => {
           this.store.dispatch(productByCategory({ product: data }));
+          console.log('product: ', product);
+
           if (product === 'home') {
             this.router.navigate(['/']);
           } else if (product === 'checkout') {
             this.router.navigate(['/checkout']);
           } else {
+            console.log(product);
             this.router.navigate(['/category/' + product]);
           }
         });

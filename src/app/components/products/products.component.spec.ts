@@ -58,45 +58,30 @@ describe('ProductsComponent', () => {
   //   component.ngOnInit()
   // });
 
-  it('should open selected product', () => {
-    const product: Product = {
-      id: 1,
-      description: 'Mens Clothes',
-      category: 'clothing',
-      image: '',
-      price: 100,
-      title: 'T-Shirt',
-      rating: { user: 3 },
-    };
-    const selectedProduct: Product[] = [
-      {
-        id: 1,
-        description: 'Mens Clothes',
-        category: 'clothing',
-        image: '',
-        price: 100,
-        title: 'T-Shirt',
-        rating: { user: 3 },
-      },
-    ];
-    spyOn(productService, 'getSelectedProduct').and.returnValue(
-      of(selectedProduct)
-    );
-    component.openProduct(product);
-  });
-
-  it('should add product to cart', () => {
-    const selectedProduct: Product[] = [
-      {
-        id: 1,
-        description: 'Mens Clothes',
-        category: 'clothing',
-        image: '',
-        price: 100,
-        title: 'T-Shirt',
-        rating: { user: 3 },
-      },
-    ];
-    component.addtoCart(selectedProduct);
-  });
+  // it('should open selected product', () => {
+  //   const product: Product = {
+  //     id: 1,
+  //     description: 'Mens Clothes',
+  //     category: 'clothing',
+  //     image: '',
+  //     price: 100,
+  //     title: 'T-Shirt',
+  //     rating: { user: 3 },
+  //   };
+  //   const selectedProduct: Product[] = [
+  //     {
+  //       id: 1,
+  //       description: 'Mens Clothes',
+  //       category: 'clothing',
+  //       image: '',
+  //       price: 100,
+  //       title: 'T-Shirt',
+  //       rating: { user: 3 },
+  //     },
+  //   ];
+  //   spyOn(productService, 'getSelectedProduct').and.returnValue(
+  //     of(selectedProduct)
+  //   );
+  //   component.openProduct(product);
+  // });
 });
